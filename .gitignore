@@ -1,3 +1,6 @@
 /venv/
+/venv_py2.7/
+/venv_py3.8/
+
 /.idea/
 /*/__pycache__/

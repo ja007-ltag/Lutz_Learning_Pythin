@@ -1,0 +1,4 @@
+2.7.18 (v2.7.18:8d21aa21f2, Apr 20 2020, 13:25:05) [MSC v.1500 64 bit (AMD64)]
+win32
+1267650600228229401496703205376
+Spam!Spam!Spam!Spam!Spam!Spam!Spam!Spam!
