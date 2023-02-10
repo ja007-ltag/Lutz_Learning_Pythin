@@ -1,8 +1,9 @@
 #! /usr/bin/env python
-
+'''
 import sys
 
-# if sys.version[0] == '2': input = raw_input
+if sys.version[0] == '2': input = raw_input
+'''
 
 # while True:
 #     reply = input('Enter text: ')
