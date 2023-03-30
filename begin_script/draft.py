@@ -1,9 +1,15 @@
-import os
+"""Это черновик и не более"""
 
-# os.system('systeminfo')
 
-# print(os.popen('systeminfo').read())
+def changer(a, b):
+    b = b[:]
+    a = 2
+    b[0] = 'spam'
 
-for i, line in enumerate(os.popen('systeminfo')):
-    # if i == 4: break
-    print('%05d) %s' % (i, line.strip().encode('utf-8')))
+
+X = 1
+L = [1, 2]
+
+changer(X, tuple(L))
+print(X, L)
+
