@@ -1,15 +1,11 @@
 """Это черновик и не более"""
 
 
-def changer(a, b):
-    b = b[:]
-    a = 2
-    b[0] = 'spam'
-
-
-X = 1
-L = [1, 2]
-
-changer(X, tuple(L))
-print(X, L)
-
+# import sys
+# from tkinter import Button, mainloop
+# x = Button(
+#     text='Press me',
+#     command=lambda: sys.stdout.write('Spam\n')
+# )
+# x.pack()
+# mainloop()
