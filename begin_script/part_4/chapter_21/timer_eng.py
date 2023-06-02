@@ -10,12 +10,22 @@ import time
 # timer = time.clock if sys.platform[:3] == 'win' else time.time
 # timer = time.perf_counter
 
-if sys.platform[:3] != 'win':
-    timer = time.time
-elif sys.version_info.major == 3 and sys.version_info.minor > 3:
+# if sys.platform[:3] != 'win':
+#     timer = time.time
+# elif sys.version_info.major == 3 and sys.version_info.minor > 3:
+#     timer = time.perf_counter
+# else:
+#     timer = time.time
+
+# if sys.version_info[0] >= 3 and sys.version_info[1] >= 3:
+#     timer = time.perf_counter  # or process_time
+# else:
+#     timer = time.clock if sys.platform[:3] == 'win' else time.time
+
+try:
     timer = time.perf_counter
-else:
-    timer = time.time
+except AttributeError:
+    timer = time.clock if sys.platform[:3] == 'win' else time.time
 
 print('Platform: {}, python: {}'.format(sys.platform, sys.version.split()[0]))
 print('Select function: {}'.format(timer.__name__))
