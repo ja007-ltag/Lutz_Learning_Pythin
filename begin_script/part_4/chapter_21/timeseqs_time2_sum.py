@@ -13,54 +13,54 @@ reps_list = list(range(reps))
 def for_loop():
     res = []
     for x in reps_list:
-        res.append(abs(x))
+        res.append(x + 10)
     return res
 
 
 def list_comp():
-    return [abs(x) for x in reps_list]
+    return [x + 10 for x in reps_list]
 
 
 def map_call_2x():
-    return map(abs, reps_list)
+    return map(lambda x: x + 10, reps_list)
 
 
 def map_call_3x():
-    return list(map(abs, reps_list))  # Only use list() in Python 3.X!
+    return list(map(lambda x: x + 10, reps_list))  # Only use list() in Python 3.X!
     # return map(abs, reps_list)
 
 
 def gen_expr():
-    return list(abs(x) for x in reps_list)  # list() is required to initialize the output
+    return list(x + 10 for x in reps_list)  # list() is required to initialize the output
 
 
 def gen_func():
     def gen():
         for x in reps_list:
-            yield abs(x)
+            yield x + 10
     return list(gen())  # list() is required to initialize the output
 
 
 def set_for():
     res = set()
     for x in reps_list:
-        res.add(abs(x))
+        res.add(x + 10)
     return res
 
 
 def set_comp():
-    return {abs(x) for x in reps_list}
+    return {x + 10 for x in reps_list}
 
 
 def dict_for():
     res = {}
     for x in reps_list:
-        res[x] = abs(x)
+        res[x] = x + 10
     return res
 
 
 def dict_comp():
-    return {x: abs(x) for x in reps_list}
+    return {x: x + 10 for x in reps_list}
 
 
 map_call = map_call_2x if sys.version_info.major == 2 else map_call_3x
