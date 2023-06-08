@@ -48,13 +48,14 @@ def max4(*args):
     return sorted(args)[-1]
 
 
-funcs = [min1, min2, min3, min4, max1, max2, max3, max4]
-tests = [[3, 4, 1, 2],
-         ['bb', 'aa', 'cc'],
-         [[2, 2], [1, 2], [1, 1], [3, 3]]]
+if __name__ == '__main__':
+    funcs = [min1, min2, min3, min4, max1, max2, max3, max4]
+    tests = [[3, 4, 1, 2],
+             ['bb', 'aa', 'cc'],
+             [[2, 2], [1, 2], [1, 1], [3, 3]]]
 
-for f in funcs:
-    for test in tests:
-        # print(f.__name__, test, f(*test))
-        print(f'{f.__name__}({str(test)[1:-1]}) = {f.__name__[:3]}: {f(*test)}')
-    print('---')
+    for f in funcs:
+        for test in tests:
+            # print(f.__name__, test, f(*test))
+            print(f'{f.__name__}({str(test)[1:-1]}) = {f.__name__[:3]}: {f(*test)}')
+        print('---')
