@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 Homegrown timing tools for function calls.
 Does total time, best-of time, and best-of-totals time
@@ -35,8 +37,8 @@ try:
 except AttributeError:
     timer = time.clock if sys.platform[:3] == 'win' else time.time
 
-print('Platform: {}, python: {}'.format(sys.platform, sys.version.split()[0]))
-print('Select function: {}'.format(timer.__name__))
+print('Platform: {0}, python: {1}'.format(sys.platform, sys.version.split()[0]))
+print('Select function: {0}'.format(timer.__name__))
 
 
 def total(reps, func, *args, **kwargs):
