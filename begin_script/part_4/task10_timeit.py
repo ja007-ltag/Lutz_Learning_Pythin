@@ -38,14 +38,14 @@ py -3.11 -m timeit -n 50 "d = {}" "for k in range(10000):" "    d[k] = 2 ** k"
 
 import sys
 import chapter_21.timer as timer
-import math
+from math import sqrt
 
 reps = 10000
 reps_list = list(range(reps))
 
 
 def sgrt_list_comp():
-    return [math.sqrt(x) for x in reps_list]
+    return [sqrt(x) for x in reps_list]
 
 
 def multi_list_comp():
@@ -59,7 +59,7 @@ def pow_list_comp():
 def sgrt_for_loop():
     res = []
     for x in reps_list:
-        res.append(math.sqrt(x))
+        res.append(sqrt(x))
     return res
 
 
@@ -78,7 +78,7 @@ def pow_for_loop():
 
 
 def sgrt_map_call():
-    return list(map(math.sqrt, reps_list))
+    return list(map(sqrt, reps_list))
 
 
 def multi_map_call():
@@ -94,7 +94,10 @@ if __name__ == '__main__':
     test_func = (sgrt_list_comp, multi_list_comp, pow_list_comp,
                  sgrt_for_loop, multi_for_loop, pow_for_loop,
                  sgrt_map_call, multi_map_call, pow_map_call,)
-    for test in test_func:
+    for num, test in enumerate(test_func):
+        if num > 0 and num % 3 == 0:
+            print('-' * 53)
+
         (bestof, (total, result)) = timer.bestof_total(5, 1000, test)
         print('%-15s: %.5f => [%s...%s]' %
               (test.__name__, bestof, result[0], result[-1]))

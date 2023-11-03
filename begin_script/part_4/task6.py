@@ -37,11 +37,7 @@ if __name__ == '__main__':
     d1.update(d2)
     print(f'{d1 = }')
 
-    l1 = [1, 2, 3]
-    l2 = [4, 5, 6]
-    print(add_dict(l1, d1))
-    print(add_dict(d1, l1))
-    print(add_dict(d1, d2))
+    
 
     # for cur in dict_list:
     #     out = copy_dict(cur)

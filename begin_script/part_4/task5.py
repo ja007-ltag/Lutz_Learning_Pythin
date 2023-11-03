@@ -1,5 +1,5 @@
 def copy_dict(in_dict):
-    # out_dict = dict()
+    # out_dict = {}
     # for key, value in in_dict.items():
     #     out_dict[key] = value
     # return out_dict
