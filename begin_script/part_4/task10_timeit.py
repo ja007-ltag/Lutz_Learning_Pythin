@@ -4,6 +4,36 @@
 Измерение времени выполнения инструментов.
 Какой из способов вычисления квадратного корня быстрее:
 math.sqrt(X), X ** .5 или pow(X, .5)
+
+
+"Как бы вы измеряли скорость выполнения включений словарей
+по сравнению с циклами for в интерактивной подсказке?"
+
+import timeit
+
+d1 = "{k: 2 ** k for k in range(10000)}"
+
+d2 = "d = {}\nfor k in range(10000):\n\td[k] = 2 ** k"
+
+d3 = '''d = {}
+for k in range(10000):
+    d[k] = 2 ** k'''
+
+timeit.timeit(stmt=d1, number=100)
+timeit.timeit(stmt=d2, number=100)
+timeit.timeit(stmt=d3, number=100)
+
+timeit.repeat(setup='', stmt=d1, number=20, repeat=5)
+timeit.repeat(setup='', stmt=d2, number=20, repeat=5)
+timeit.repeat(setup='', stmt=d3, number=20, repeat=5)
+
+min(timeit.repeat(setup='', stmt=d1, number=20, repeat=5))
+min(timeit.repeat(setup='', stmt=d2, number=20, repeat=5))
+min(timeit.repeat(setup='', stmt=d3, number=20, repeat=5))
+
+Так в командной строке:
+py -3.11 -m timeit -n 50 "{k: 2 ** k for k in range(10000)}"
+py -3.11 -m timeit -n 50 "d = {}" "for k in range(10000):" "    d[k] = 2 ** k"
 """
 
 import sys
