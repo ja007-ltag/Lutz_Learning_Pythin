@@ -1,4 +1,4 @@
-#! /usr/local/bin/python
+#! /usr/bin/env python
 import sys
 
 print(sys.version.split()[0])
